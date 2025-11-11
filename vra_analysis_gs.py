@@ -271,9 +271,9 @@ def main():
     }
 
     # [1-1] VRA 파일 불러오기
-    vra_rx_files = glob.glob(os.path.join(VRA_FOLDER, '*_VRA_Rx.tif'))
+    vra_rx_files = glob.glob(os.path.join(VRA_FOLDER, '*_Rx.tif'))
     if not vra_rx_files:
-        print(f"[오류] '{VRA_FOLDER}'에 '*_VRA_Rx.tif' 파일이 없습니다.")
+        print(f"[오류] '{VRA_FOLDER}'에 '*_Rx.tif' 파일이 없습니다.")
         qgs.exitQgis()
         return
 
@@ -503,6 +503,9 @@ def main():
                 before_mean_result = group['before_mean'].mean()
                 after_mean_result = group['after_mean'].mean()
 
+                # DN별 면적(ha) 합계 계산
+                area_ha_sum = group['area_ha'].sum()
+
                 vi_rate = 0
                 if before_mean_result != 0 and before_mean_result is not None:
                     # 증감율 계산
@@ -514,6 +517,7 @@ def main():
                 growth_data_list.append({
                     '필지코드': field_code,
                     'color_group': color_group_name,
+                    'area_ha': area_ha_sum,
                     'before_mean_result': before_mean_result,
                     'after_mean_result': after_mean_result,
                     'vi_rate': vi_rate
