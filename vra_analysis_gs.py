@@ -506,6 +506,9 @@ def main():
                 # DN별 면적(ha) 합계 계산
                 area_ha_sum = group['area_ha'].sum()
 
+                # DN별 비료 살포량(spray) 합계 계산
+                spray_sum = group['spray'].sum()
+
                 vi_rate = 0
                 if before_mean_result != 0 and before_mean_result is not None:
                     # 증감율 계산
@@ -518,6 +521,7 @@ def main():
                     '필지코드': field_code,
                     'color_group': color_group_name,
                     'area_ha': area_ha_sum,
+                    'spray_sum': spray_sum,
                     'before_mean_result': before_mean_result,
                     'after_mean_result': after_mean_result,
                     'vi_rate': vi_rate
