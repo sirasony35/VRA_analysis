@@ -8,14 +8,14 @@ from datetime import datetime
 
 # --- 1. 사용자 설정 부분 ---
 QGIS_INSTALL_PATH = 'C:/Program Files/QGIS 3.40.11'  # 버전 업데이트 반영
-VRA_FOLDER = 'data/gj/gj_vra_data'
-BEFORE_FOLDER = 'data/gj/gj_before_data'
-AFTER_FOLDER = 'data/gj/gj_after_data'
-OUTPUT_IMAGE_FOLDER = 'data/gj/result_images'
-OUTPUT_CSV_FOLDER = 'data/gj/result_csv'
-OUTPUT_TEMP_FOLDER = 'data/gj/temp_layers'
+VRA_FOLDER = 'data/hw/hw_vra_data'
+BEFORE_FOLDER = 'data/hw/hw_before_data'
+AFTER_FOLDER = 'data/hw/hw_after_data'
+OUTPUT_IMAGE_FOLDER = 'data/hw/result_images'
+OUTPUT_CSV_FOLDER = 'data/hw/result_csv'
+OUTPUT_TEMP_FOLDER = 'data/hw/temp_layers'
 OUTPUT_LOG_FOLDER = 'logs'
-vra_area = '김제'
+vra_area = '화성'
 
 # 좌표계 설정 (모든 데이터를 이 좌표계로 통일)
 TARGET_EPSG = 'EPSG:4326'  # WGS84 경위도 좌표계
